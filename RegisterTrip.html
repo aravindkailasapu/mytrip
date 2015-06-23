@@ -1,0 +1,39 @@
+﻿<h1>{{Title}}</h1>
+<form class="form-horizontal">
+    <fieldset>
+        <div class="row">
+            <div class="alert alert-success fade in col-md-4 col-md-offset-4" data-ng-if="isSucess">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Success!</strong> User Trip created successfully.
+            </div>
+            <div class="alert alert-danger fade in col-md-4 col-md-offset-4" data-ng-if="error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> {{error}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userID" class="col-md-4 control-label pull-left">User Id</label>
+            <div class="col-md-4">
+                <select data-ng-model="selectedUser" ng-options="user as user.userId for user in users"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tripID" class="col-md-4 control-label">TripID</label>
+            <div class="col-md-4">
+                <select data-ng-model="selectedTrip" ng-options="trip as trip.name for trip in trips"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userComments" class="col-md-4 control-label">User Comments</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-ng-model="userpost.userComments" placeholder="User Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <a href="" data-ng-click="cancel()" class="btn btn-default">Cancel</a>
+                <a href="" data-ng-click="save()" class="btn btn-primary">Save</a>
+            </div>
+        </div>
+    </fieldset>
+</form>

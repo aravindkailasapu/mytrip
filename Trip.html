@@ -1,0 +1,48 @@
+﻿<h1>{{Title}}</h1>
+    <form class="form-horizontal" name="TripForm">
+        <fieldset>
+            <div class="row">
+                <div class="alert alert-success fade in col-md-4 col-md-offset-4" data-ng-if="isSucess">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Success!</strong> Trip created successfully.
+                </div>
+                <div class="alert alert-danger fade in col-md-4 col-md-offset-4" data-ng-if="error">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Error!</strong> {{error}}
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error' : TripForm.name.$invalid && !TripForm.name.$pristine && submitted}">
+                <label for="name" class="col-md-4 control-label pull-left">Name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="name" data-ng-model="trip.name" placeholder="Trip Name" required>
+                    <span ng-show="TripForm.name.$invalid && submitted" class="text-danger">Trip Name is Required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Category" class="col-md-4 control-label">Category</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-ng-model="trip.Category" placeholder="Category">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description" class="col-md-4 control-label">Description</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-ng-model="trip.Description" placeholder="Description">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Destination" class="col-md-4 control-label">Destination</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-ng-model="trip.Destination" placeholder="Destination">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <a href="" data-ng-click="cancel()" class="btn btn-default">Cancel</a>
+                    <a href="" data-ng-click="save(TripForm.$invalid)" class="btn btn-primary">Save</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+<!--</body>
+</html>-->

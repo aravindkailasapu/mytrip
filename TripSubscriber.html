@@ -1,0 +1,49 @@
+﻿<h1>{{Title}}</h1>
+    <form class="form-horizontal" name="TripSubscriberForm" novalidate>
+    <fieldset>
+        <div class="row">
+            <div class="alert alert-success fade in col-md-4 col-md-offset-4" data-ng-if="isSucess">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Success!</strong> Trip subscriber created successfully.
+            </div>
+            <div class="alert alert-danger fade in col-md-4 col-md-offset-4" data-ng-if="error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> {{error}}
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : TripSubscriberForm.userId.$invalid && !TripSubscriberForm.userId.$pristine && submitted}">
+            <label for="userID" class="col-md-4 control-label pull-left">User Id</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="userId" data-ng-model="tripSubscriber.userId" placeholder="User Id" required>
+                <span style="color:red" ng-show="TripSubscriberForm.userId.$invalid"></span>
+                <span  ng-show="TripSubscriberForm.userId.$invalid && submitted" class="text-danger">User Id is Required</span>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error' : TripSubscriberForm.emailAddress.$invalid && !TripSubscriberForm.emailAddress.$pristine && submitted }">
+            <label for="X_Email" class="col-md-4 control-label">Email</label>
+            <div class="col-md-4">
+                <input type="email" class="form-control" name="emailAddress" data-ng-model="tripSubscriber.X_Email" placeholder="Email Address">
+                <span ng-show="TripSubscriberForm.emailAddress.$invalid && submitted" class="text-danger">Enter a valid Email</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="X_UserName" class="col-md-4 control-label">User Name</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-ng-model="tripSubscriber.X_UserName" placeholder="User Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="profileImageURI" class="col-md-4 control-label">Profile Image URI #</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-ng-model="tripSubscriber.profileImageURI" placeholder="Image URI">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <a href="" data-ng-click="cancel()" class="btn btn-default">Cancel</a>
+                <button type="submit" data-ng-click="save(TripSubscriberForm.$invalid)" class="btn btn-primary"> <!--data-ng-disabled="TripSubscriberForm.$invalid"-->Save</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+

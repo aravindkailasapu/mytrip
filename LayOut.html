@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="userTrip">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Controllers/Trip-Controller.js"></script>
+    <script src="Services/TripService.js"></script>
+    <script src="Controllers/Trip-Subscriber-Controller.js"></script>
+    <script src="Services/TripSubscriberService.js"></script>
+    <script src="Controllers/Register-Trip-Controller.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#Projects">Trip Organizer</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a data-ui-sref="Home">Home</a>
+                </li>
+                <li class="active">
+                    <a data-ui-sref="TripTemplate">Trip</a>
+                </li>
+                <li class="active">
+                    <a data-ui-sref="TripSubscriberTemplate">Trip Subscriber</a>
+                </li>
+                <li class="active">
+                    <a data-ui-sref="UserTripTemplate">User Trip</a>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+    <div data-ui-view>
+    </div>
+</body>
+</html>
